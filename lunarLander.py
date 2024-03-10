@@ -1,11 +1,12 @@
 altitude = 1500
 carburant_hydrogene = 2000
-HYPERVITESSE = 60
-EXPLOSIOOOOON = 40
-attraction = 1.622
-REACTIOOON = 0
+HYPERVITESSE = 60 #vélocité
+EXPLOSIOOOOON = 0 #temps avant impact
+attraction = 1.622 #gravité
+REACTIOOON = 0 #force du propulseur
 
 while altitude > 0:
+    EXPLOSIOOOOON = altitude/HYPERVITESSE
     print("EXPLOSIOOOOON DANS..." , EXPLOSIOOOOON)
     print("HYPERVITESSE = " , HYPERVITESSE)
     print("hydrogene restant = " , carburant_hydrogene)
@@ -23,7 +24,7 @@ while altitude > 0:
     HYPERVITESSE += attraction - REACTIOOON / 10
     altitude -= HYPERVITESSE
     carburant_hydrogene -= REACTIOOON
-    
+    print()
 if HYPERVITESSE >= 5:
         print ("BOOM!")
         print ("GAME-OVER!")
